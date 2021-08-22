@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/runtime": "^7.15.3",
     "axios": "^0.21.1",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
