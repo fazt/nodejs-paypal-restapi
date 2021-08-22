@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Website.com</title>
+  </head>
+  <body>
+    <button id="checkout">Checkout!</button>
+
+    <script>
+      const checkout = document.getElementById("checkout");
+      checkout.addEventListener("click", async () => {
+        const response = await fetch("/create-order", {
+          method: "POST",
+        });
+        const data = await response.json();
+        window.location.href = data.links[1].href
+      });
+    </script>
+  </body>
+</html>

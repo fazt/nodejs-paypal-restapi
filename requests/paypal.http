@@ -1,0 +1,18 @@
+### generate token
+
+curl -v https://api-m.sandbox.paypal.com/v1/oauth2/token \
+  -H "Accept: application/json" \
+  -H "Accept-Language: en_US" \
+  -u "AeWjuXIc8YDlv3nK9usTjDy6VAAXFL8gPE4GAgH-5teMty9oGvwdUHYaUCPFH0IMqPpB2RbbYuFP2fUG:EN17orbJxGjpvQvb_iGwVjsF1oorFFWkCq3h5YSoaf4QYKdth0YvmNyWUCz3KinFRgn2H_j7xX709HCO" \
+  -d "grant_type=client_credentials"
+
+### create payment with client and secret using basic authentication
+POST http://localhost:3000/create-order
+Authorization: Basic AeWjuXIc8YDlv3nK9usTjDy6VAAXFL8gPE4GAgH-5teMty9oGvwdUHYaUCPFH0IMqPpB2RbbYuFP2fUG:EN17orbJxGjpvQvb_iGwVjsF1oorFFWkCq3h5YSoaf4QYKdth0YvmNyWUCz3KinFRgn2H_j7xX709HCO
+
+### create payment using token, generated from client and secret, with Buffer.from().toString('base64)
+POST http://localhost:3000/create-order
+Authorization: Bearer QWVXanVYSWM4WURsdjNuSzl1c1RqRHk2VkFBWEZMOGdQRTRHQWdILTV0ZU10eTlvR3Z3ZFVIWWFVQ1BGSDBJTXFQcEIyUmJiWXVGUDJmVUc6RU4xN29yYkp4R2pwdlF2Yl9pR3dWanNGMW9vckZGV2tDcTNoNVlTb2FmNFFZS2R0aDBZdm1OeVdVQ3ozS2luRlJnbjJIX2o3eFg3MDlIQ08=
+
+### Generated from the client
+POST http://localhost:3000/create-order
