@@ -1,6 +1,6 @@
 import axios from "axios";
 import fetch from "node-fetch";
-import { CLIENT, SECRET, PAYPAL_API, PORT } from "../config";
+import { CLIENT, SECRET, PAYPAL_API, PORT, HOST } from "../config";
 
 export const createOrder = async (req, res) => {
   const body = {
@@ -17,12 +17,8 @@ export const createOrder = async (req, res) => {
       brand_name: "mycompany.com",
       landing_page: "NO_PREFERENCE",
       user_action: "PAY_NOW",
-      return_url: `${
-        process.env.NODE_ENV === "production" ? "https" : "http"
-      }://${req.hostname}:${PORT}/capture-order`,
-      cancel_url: `${
-        process.env.NODE_ENV === "production" ? "https" : "http"
-      }://${req.hostname}:${PORT}/cancel-payment`,
+      return_url: `${HOST}/capture-order`,
+      cancel_url: `${HOST}/cancel-payment`,
     },
   };
 
