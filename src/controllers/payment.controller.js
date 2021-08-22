@@ -22,12 +22,8 @@ export const createOrder = async (req, res) => {
       brand_name: "mycompany.com",
       landing_page: "NO_PREFERENCE",
       user_action: "PAY_NOW",
-      return_url: `${
-        process.env.NODE_ENV !== "production" ? "http" : "https"
-      }:${req.hostname}:${PORT}/capture-order`,
-      cancel_url: `${
-        process.env.NODE_ENV !== "production" ? "http" : "https"
-      }:${req.hostname}:${PORT}/cancel-payment`,
+      return_url: `${req.protocol}:${req.hostname}:${PORT}/capture-order`,
+      cancel_url: `${req.protocol}:${req.hostname}:${PORT}/cancel-payment`,
     },
   };
 
