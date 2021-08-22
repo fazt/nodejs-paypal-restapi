@@ -3,11 +3,6 @@ import fetch from "node-fetch";
 import { CLIENT, SECRET, PAYPAL_API, PORT } from "../config";
 
 export const createOrder = async (req, res) => {
-  console.log(
-    `${process.env.NODE_ENV !== "production" ? "http" : "https"}:${
-      req.hostname
-    }:${PORT}/capture-order`
-  );
   const body = {
     intent: "CAPTURE",
     purchase_units: [
@@ -26,6 +21,8 @@ export const createOrder = async (req, res) => {
       cancel_url: `${req.protocol}://${req.hostname}:${PORT}/cancel-payment`,
     },
   };
+
+  console.log(body.application_context)
 
   // const access_token = Buffer.from(`${CLIENT}:${SECRET}`).toString("base64");
 
