@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon src/index.js --exec babel-node",
     "start": "cross-env NODE_ENV=production node dist/index.js",
-    "build": "babel src -d dist"
+    "build": "babel src -d dist && ncp src/public dist/public"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +27,7 @@
     "@babel/node": "^7.14.9",
     "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
+    "ncp": "^2.0.0",
     "nodemon": "^2.0.12"
   }
 }
