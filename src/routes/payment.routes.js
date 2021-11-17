@@ -11,6 +11,6 @@ router.post("/create-order", createOrder);
 
 router.get("/capture-order", captureOrder);
 
-router.get("/cancel-payment", cancelPayment);
+router.get("/cancel-order", cancelPayment);
 
 export default router;

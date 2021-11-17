@@ -4,7 +4,7 @@ import cors from "cors";
 import path from "path";
 import { PORT } from "./config";
 
-import paymentRoutes from "./routes/payment";
+import paymentRoutes from "./routes/payment.routes";
 
 const app = express();
 
@@ -17,4 +17,4 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.listen(PORT);
 console.log(`Server on port http://localhost:${PORT}`);
-console.log(`environment: ${process.env.NODE_ENV}`)
+console.log(`environment: ${process.env.NODE_ENV}`);
