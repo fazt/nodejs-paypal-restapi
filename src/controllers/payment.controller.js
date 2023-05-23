@@ -4,7 +4,7 @@ import {
   HOST,
   PAYPAL_API_CLIENT,
   PAYPAL_API_SECRET,
-} from "../config";
+} from "../config.js";
 
 export const createOrder = async (req, res) => {
   try {
@@ -26,7 +26,6 @@ export const createOrder = async (req, res) => {
         cancel_url: `${HOST}/cancel-payment`,
       },
     };
-
 
     // format the body
     const params = new URLSearchParams();
@@ -66,7 +65,7 @@ export const createOrder = async (req, res) => {
 
     return res.json(response.data);
   } catch (error) {
-    console.log(error.message);
+    console.log(error);
     return res.status(500).json("Something goes wrong");
   }
 };
@@ -95,6 +94,4 @@ export const captureOrder = async (req, res) => {
   }
 };
 
-export const cancelPayment = (req, res) => {
-  res.redirect("/");
-};
+export const cancelPayment = (req, res) => res.redirect("/");

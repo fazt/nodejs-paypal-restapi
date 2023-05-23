@@ -2,32 +2,26 @@
   "name": "paypal-checkout",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon src/index.js --exec babel-node",
-    "start": "cross-env NODE_ENV=production node dist/index.js",
-    "build": "babel src -d dist && ncp src/public dist/public"
+    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
+    "start": "cross-env NODE_ENV=production node src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/runtime": "^7.16.3",
-    "axios": "^0.24.0",
+    "axios": "^1.4.0",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
     "morgan": "^1.10.0",
-    "node-fetch": "^3.1.0"
+    "node-fetch": "^3.3.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.0",
-    "@babel/node": "^7.16.0",
-    "@babel/plugin-transform-runtime": "^7.16.4",
-    "@babel/preset-env": "^7.16.4",
     "ncp": "^2.0.0",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.22"
   }
 }

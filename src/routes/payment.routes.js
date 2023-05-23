@@ -3,7 +3,7 @@ import {
   createOrder,
   captureOrder,
   cancelPayment,
-} from "../controllers/payment.controller";
+} from "../controllers/payment.controller.js";
 
 const router = Router();
 
